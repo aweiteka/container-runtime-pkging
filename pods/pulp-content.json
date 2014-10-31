@@ -1,0 +1,43 @@
+{
+  "id": "pulp-content",
+  "desiredState": {
+    "manifest": {
+      "version": "v1beta1",
+      "id": "pulp-content",
+      "containers": [
+	{
+	  "name": "pulp-worker",
+	  "image": "markllama/pulp-worker",
+	  "env": [
+            { "name": "PULP_SERVER_NAME", "value": "pulp.example.com" }
+          ],
+          "command": ["1"],
+          "volumeMounts": [
+            {"name": "devlog", "readOnly": false, "mountPath": "/dev/log" },
+            {"name": "varwww", "readOnly": false, "mountPath": "/var/www"},
+            {"name": "varlibpulp", "readOnly": false, "mountPath": "/var/lib/pulp"},
+	  ],
+	},
+	{
+	  "name": "pulp-apache",
+	  "image": "markllama/pulp-apache",
+	  "env": [
+	    { "name": "PULP_SERVER_NAME", "value": "pulp.example.com" }
+	  ],
+          "volumeMounts": [
+            {"name": "devlog", "readOnly": false, "mountPath": "/dev/log" },
+            {"name": "varwww", "readOnly": false, "mountPath": "/var/www"},
+            {"name": "varlibpulp", "readOnly": false, "mountPath": "/var/lib/pulp"},	  
+	  ],
+	},
+      ],
+      "volumes": [
+        {"name": "devlog", "source": {"hostDir": {"path": "/dev/log"}}},
+	{"name": "varwww", "source": {"emptyDir": true }},
+	{"name": "varlibpulp", "source": {"emptyDir": true}},
+      ],
+    },
+      
+  },
+}
+
