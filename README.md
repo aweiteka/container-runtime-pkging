@@ -15,10 +15,16 @@ A data-only container is a valid use of Docker. Consider this Dockerfile:
 FROM scratch
 ADD metadata /container-metadata/
 VOLUME /container-metadata
+# bogus command, required
+CMD .
 ```
 
-The container will fail to run without a valid `ENTRYPOINT` or `CMD` but the contents will be available as a stopped container. From there we have several options:
+## How do you access the data?
 
-* use `--volumes-from <stopped_container>`
-* mount the volume on the host
-* integrate into kubernetes and access from there
+Data in an image can be accessed by using docker `create` and `cp` commands.
+```
+docker create kube-metadata
+docker cp $(docker ps -q -l):/container-metadata/ .
+```
+
+This will copy the contents of `/container-metadata` from the image to the current directory.
