@@ -1,0 +1,9 @@
+{
+  "id": "pulp-http",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 80,
+  "selector": {
+    "name": "pulp-content"
+  },
+}
