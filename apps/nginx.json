@@ -1,0 +1,143 @@
+[
+  {
+    "HostsPath": "", 
+    "Created": "2014-11-12T22:12:05.658693297Z", 
+    "Image": "", 
+    "Args": [
+      "-g", 
+      "daemon off;"
+    ], 
+    "Driver": "devicemapper", 
+    "HostConfig": {
+      "CapDrop": null, 
+      "PortBindings": {
+        "443/tcp": [
+          {
+            "HostPort": "", 
+            "HostIp": ""
+          }
+        ], 
+        "80/tcp": [
+          {
+            "HostPort": "80", 
+            "HostIp": "0.0.0.0"
+          }
+        ]
+      }, 
+      "NetworkMode": "bridge", 
+      "Links": null, 
+      "LxcConf": [], 
+      "ContainerIDFile": "", 
+      "Devices": null, 
+      "CapAdd": null, 
+      "Binds": [
+        "/home/aweiteka/dev/tmp/nginx:/usr/share/nginx/html:ro", 
+        "/var/lib/docker/vfs/dir/3280a9ffb25d7959a2567c87eb2565d5f06f1ebb5f4e272e1e6b2acb509fa86a:/var/cache/nginx:rw"
+      ], 
+      "RestartPolicy": {
+        "MaximumRetryCount": 0, 
+        "Name": ""
+      }, 
+      "PublishAllPorts": false, 
+      "Dns": null, 
+      "ExtraHosts": null, 
+      "DnsSearch": null, 
+      "Privileged": false, 
+      "VolumesFrom": null
+    }, 
+    "MountLabel": "system_u:object_r:svirt_sandbox_file_t:s0:c497,c862", 
+    "VolumesRW": {
+      "/var/cache/nginx": true, 
+      "/usr/share/nginx/html": false
+    }, 
+    "State": {
+      "Pid": 24616, 
+      "Paused": false, 
+      "Running": true, 
+      "FinishedAt": "", 
+      "Restarting": false, 
+      "StartedAt": "", 
+      "ExitCode": 0
+    }, 
+    "ExecDriver": "native-0.2", 
+    "ResolvConfPath": "", 
+    "Volumes": {
+      "/var/cache/nginx": "/var/lib/docker/vfs/dir/3280a9ffb25d7959a2567c87eb2565d5f06f1ebb5f4e272e1e6b2acb509fa86a", 
+      "/usr/share/nginx/html": "/home/aweiteka/dev/tmp/nginx"
+    }, 
+    "Path": "nginx", 
+    "HostnamePath": "", 
+    "ProcessLabel": "system_u:system_r:svirt_lxc_net_t:s0:c497,c862", 
+    "Config": {
+      "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 
+        "NGINX_VERSION=1.7.7-1~wheezy"
+      ], 
+      "Hostname": "", 
+      "Entrypoint": [], 
+      "PortSpecs": null, 
+      "Memory": 0, 
+      "OnBuild": null, 
+      "OpenStdin": false, 
+      "Cpuset": "", 
+      "User": "", 
+      "CpuShares": 0, 
+      "AttachStdout": true, 
+      "NetworkDisabled": false, 
+      "WorkingDir": "", 
+      "Cmd": [
+        "nginx", 
+        "-g", 
+        "daemon off;"
+      ], 
+      "StdinOnce": false, 
+      "AttachStdin": false, 
+      "MemorySwap": 0, 
+      "Volumes": {
+        "/var/cache/nginx": {}, 
+        "/usr/share/nginx/html": {}
+      }, 
+      "Tty": false, 
+      "AttachStderr": true, 
+      "Domainname": "", 
+      "Image": "nginx", 
+      "SecurityOpt": null, 
+      "ExposedPorts": {
+        "443/tcp": {}, 
+        "80/tcp": {}
+      }
+    }, 
+    "Id": "", 
+    "NetworkSettings": {
+      "MacAddress": "02:42:ac:11:00:34", 
+      "Bridge": "docker0", 
+      "PortMapping": null, 
+      "IPPrefixLen": 16, 
+      "IPAddress": "172.17.0.52", 
+      "Gateway": "172.17.42.1", 
+      "Ports": {
+        "443/tcp": [
+          {
+            "HostPort": "49153", 
+            "HostIp": "0.0.0.0"
+          }
+        ], 
+        "80/tcp": [
+          {
+            "HostPort": "80", 
+            "HostIp": "0.0.0.0"
+          }
+        ]
+      }
+    }, 
+    "Name": "/nginx"
+  }, 
+  {
+    "UserParams": {
+      "rm": "", 
+      "dockercommand": "", 
+      "restart": "", 
+      "sig-proxy": ""
+    }
+  }
+]
